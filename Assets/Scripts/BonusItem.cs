@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class BonusItem : MonoBehaviour
 {
     [SerializeField] private Image _bonusBG;
-    [SerializeField] private int _bonusValue;
+    public int BonusValue;
 
     public void AddBonus()
     {
         var curTikets = DataKeeper.GetTikets();
-        DataKeeper.SetTikets(curTikets + _bonusValue);
+        DataKeeper.SetTikets(curTikets + BonusValue);
     }
     public void EnableBonusBG()
     {

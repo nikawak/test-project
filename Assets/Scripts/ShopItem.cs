@@ -21,6 +21,7 @@ public class ShopItem : MonoBehaviour
 	[SerializeField] private int _tickets;
 	public void Awake()
 	{
+		DataKeeper.SetLevel(1);
 		_priceText.text = _price.ToString();
 		_minLevelText.text = _minLevel == 0 ? "" : "Level: " + _minLevel.ToString();
 		if(_minLevel == 0 || DataKeeper.GetLevel(_minLevel)) DataKeeper.SetIsUnlocked(_itemName);

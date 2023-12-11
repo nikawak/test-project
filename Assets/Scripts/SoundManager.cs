@@ -40,8 +40,8 @@ public class SoundManager : MonoBehaviour
     }
 	public void ChangeSpriteMusic(bool isEnabled)
 	{
-		_checkSpriteSound.SetActive(isEnabled);
-		_crossSpriteSound.SetActive(!isEnabled);
+		_checkSpriteMusic.SetActive(isEnabled);
+		_crossSpriteMusic.SetActive(!isEnabled);
 	}
 	public void PlayClickSound()
     {

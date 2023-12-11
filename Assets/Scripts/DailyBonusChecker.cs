@@ -8,6 +8,7 @@ public class DailyBonusChecker : MonoBehaviour
 {
     [SerializeField] List<BonusItem> Rewards;
     [SerializeField] TextMeshProUGUI TimeToBonusText;
+    [SerializeField] RewardPanel RewardPanel;
 
     private int _maxBonusDay => Rewards.Count;
     private TimeSpan _timeToGetNext => TimeSpan.FromSeconds(10);
@@ -52,7 +53,8 @@ public class DailyBonusChecker : MonoBehaviour
 
         if (!canGet.canGet && !canGet.isDeadline) return;
 
-        Rewards[DataKeeper.GetLastClaimDay()].AddBonus();
+        RewardPanel.Open(Rewards[DataKeeper.GetLastClaimDay()].BonusValue);
+
         Rewards[DataKeeper.GetLastClaimDay()].DisableBonusBG();
 
 
